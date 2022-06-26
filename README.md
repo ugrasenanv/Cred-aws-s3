@@ -36,13 +36,13 @@ const config = {
     s3Url: 'https:/your-custom-s3-url.com/', /* optional */
 }
 
-const ReactS3Client = new S3(config);
+const CredAwsS3 = new S3(config);
 /*  Notice that if you don't provide a dirName, the file will be automatically uploaded to the root of your bucket */
 
 /* This is optional */
 const newFileName = 'test-file';
 
-ReactS3Client
+CredAwsS3
     .uploadFile(file, newFileName)
     .then(data => console.log(data))
     .catch(err => console.error(err))
@@ -76,7 +76,7 @@ const config = {
     s3Url: 'https:/your-custom-s3-url.com/', /* optional */
 }
 
-const ReactS3Client = new S3(config);
+const CredAwsS3 = new S3(config);
 
 const filename = 'hello-world.docx';
 
@@ -84,7 +84,7 @@ const filename = 'hello-world.docx';
 
 //In this case the file that we want to delete is in the folder 'photos' that we referred in the config object as the dirName
 
-ReactS3Client
+CredAwsS3
     .deleteFile(filename)
     .then(response => console.log(response))
     .catch(err => console.error(err))
